@@ -3,6 +3,7 @@
 use App\Http\Controllers\DrugsController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VitalSignController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,8 @@ Route::get("allPatient","index")->name("allPatient");
 Route::put("UpdatePatient/{id}","update")->name("UpdatePatient");
 });
 
+Route::controller(VitalSignController::class)->group(function(){
+    Route::post("addVitalSigns","store");
+    Route::put("updateVitalSigns/{id}","update");
+    Route::get("VitalSigns","index");
+});
