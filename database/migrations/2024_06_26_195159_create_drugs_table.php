@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string("name",255);
             $table->text("desc");
             $table->string("image")->nullable();
+            $table->integer("loading")->nullable();
+            $table->integer("maintenance")->nullable();
+            $table->integer("duration")->nullable();
+            $table->integer("full_amount")->nullable();
+            //----relation
             $table->timestamps();
         });
     }

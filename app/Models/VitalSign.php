@@ -17,4 +17,8 @@ class VitalSign extends Model
         'temperature',
         'electrocardiogram',
     ];
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
 }

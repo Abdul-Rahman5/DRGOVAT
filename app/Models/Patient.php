@@ -21,4 +21,18 @@ class Patient extends Model
         'period_of_operation',
         'operations',
     ];
+    public function vitalSigns()
+    {
+        return $this->hasMany(VitalSign::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function drugs()
+    {
+        return $this->belongsToMany(Drugs::class, 'patient_drug');
+    }
 }

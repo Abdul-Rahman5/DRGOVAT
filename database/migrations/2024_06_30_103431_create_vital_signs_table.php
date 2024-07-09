@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('respiratory_rate',255);
             $table->integer('oxygen_saturation');
             $table->integer('end_tidal_carbon');
-            $table->decimal('temperature', 4, 1);
+            $table->decimal('temperature', 4, 1); 
             $table->integer('electrocardiogram');
-
-
+            //----relation
+            $table->foreignId('patient_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

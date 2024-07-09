@@ -13,4 +13,8 @@ class Drugs extends Model
         "desc",
         "image",
     ];
+     public function patients()
+    {
+        return $this->belongsToMany(Patient::class);
+    }
 }
